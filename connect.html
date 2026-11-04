@@ -107,26 +107,70 @@
           <div class="offer reveal">
             <h3>🎤 Speaking</h3>
             <p>Keynotes and workshops on AI, identity and cloud.</p>
-            <a href="mailto:jain.premaseem@gmail.com?subject=Speaking%20invitation">Invite Aseem →</a>
+            <a href="mailto:contact@premaseem.com?subject=Speaking%20invitation">Invite Aseem →</a>
           </div>
           <div class="offer reveal" data-delay=".08">
             <h3>🧭 Mentorship</h3>
             <p>For engineers becoming architects and leads.</p>
-            <a href="mailto:jain.premaseem@gmail.com?subject=Mentorship">Let's talk →</a>
+            <a href="mailto:contact@premaseem.com?subject=Mentorship">Let's talk →</a>
           </div>
           <div class="offer reveal" data-delay=".16">
             <h3>🌬️ Breathwork</h3>
             <p>Sessions for individuals and teams.</p>
-            <a href="mailto:jain.premaseem@gmail.com?subject=Breathwork%20session">Join a session →</a>
+            <a href="mailto:contact@premaseem.com?subject=Breathwork%20session">Join a session →</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0" id="message">
+      <div class="wrap contact">
+        <div class="section-head reveal">
+          <p class="eyebrow">Send a message</p>
+          <h2>Questions. Ideas. Invitations.</h2>
+          <p class="muted">Write to Aseem here. Replies come by email.</p>
+        </div>
+        <form class="contact-form reveal" id="contact-form" action="https://premaseem-contact.jain-premaseem.workers.dev" method="post" data-delay=".08">
+          <div class="row">
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" maxlength="100" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" maxlength="200" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-topic">Topic</label>
+            <select id="cf-topic" name="topic">
+              <option>General</option>
+              <option>Speaking / Podcast</option>
+              <option>Consulting / Architecture</option>
+              <option>Mentoring</option>
+              <option>Aviation</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" minlength="5" maxlength="5000" rows="6" required></textarea>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="cf-company">Company</label>
+            <input type="text" id="cf-company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFyzcEVClWR2zdE3"></div>
+          <button type="submit" class="btn btn-primary">Send message →</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
 
     <section class="section" style="padding-top:0; text-align:center">
       <div class="wrap reveal">
         <p class="eyebrow" style="margin-bottom:18px">Or write directly</p>
-        <a class="email-big" href="mailto:jain.premaseem@gmail.com">jain.premaseem@gmail.com</a>
+        <a class="email-big" href="mailto:contact@premaseem.com">contact@premaseem.com</a>
       </div>
     </section>
   </main>
@@ -148,6 +192,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4089dc42cae44a83a6085d753ad78482"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

@@ -58,6 +58,37 @@
     }, 2400);
   }
 
+  // Contact form: posts to the Cloudflare Worker in the form's action
+  const form = document.getElementById('contact-form');
+  if (form) {
+    const btn = form.querySelector('button[type="submit"]');
+    const status = form.querySelector('.form-status');
+    const label = btn.textContent;
+    const show = (ok, text) => {
+      status.className = 'form-status ' + (ok ? 'ok' : 'err');
+      status.textContent = text;
+    };
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      status.className = 'form-status';
+      status.textContent = '';
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+        const data = await res.json();
+        show(data.ok, data.msg);
+        if (data.ok) form.reset();
+      } catch (err) {
+        show(false, '');
+        status.innerHTML = 'Couldn’t reach the server. Please email <a href="mailto:contact@premaseem.com">contact@premaseem.com</a>.';
+      }
+      if (window.turnstile) window.turnstile.reset();
+      btn.disabled = false;
+      btn.textContent = label;
+    });
+  }
+
   // Count-up: data-to, data-decimals, data-suffix, data-prefix
   const formatNum = (el, v) => {
     const d = parseInt(el.dataset.decimals || '0', 10);
