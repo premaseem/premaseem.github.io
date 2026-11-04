@@ -27,6 +27,14 @@ Don't show the YouTube subscriber count. Use "10,000+ followers" instead.
 - Respect `prefers-reduced-motion`. Check layouts at phone width.
 - Pages: Home, About, Gallery, Connect. Each page carries its own nav, so update all of them together.
 
+## Analytics (required on every page)
+
+Every HTML page, including any new one, must have this Cloudflare Web Analytics tag as the last line before `</body>`, after the other scripts. Copy it exactly and never remove or change it:
+
+```html
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4089dc42cae44a83a6085d753ad78482"}'></script><!-- End Cloudflare Web Analytics -->
+```
+
 ## Photos
 
 - Stored in `assets/img/`, resized for the web (≤1800px, JPEG).
@@ -36,5 +44,6 @@ Don't show the YouTube subscriber count. Use "10,000+ followers" instead.
 ## Before every push
 
 1. Search all files for the forbidden employer's name and its short forms. It must return nothing.
-2. Take screenshots at desktop and phone width.
-3. Get Aseem's go-ahead, then push to `main`.
+2. Check that every `.html` file contains the Cloudflare analytics token `4089dc42cae44a83a6085d753ad78482`.
+3. Take screenshots at desktop and phone width.
+4. Get Aseem's go-ahead, then push to `main`.
