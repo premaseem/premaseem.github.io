@@ -27,6 +27,12 @@ Don't show the YouTube subscriber count. Use "10,000+ followers" instead.
 - Respect `prefers-reduced-motion`. Check layouts at phone width.
 - Pages: Home, About, Gallery, Connect. Each page carries its own nav, so update all of them together.
 
+## Contact
+
+- The public email is `contact@premaseem.com`. Use it in every mailto link.
+- The form on Connect posts to the Cloudflare Worker `https://premaseem-contact.jain-premaseem.workers.dev`, protected by Turnstile (public site key in the HTML). Its handler is in `main.js`.
+- The Worker is configured in the Cloudflare dashboard. Never create, change or redeploy it from this repo, and never add a wrangler config, or its bindings and secrets get wiped. Never write any secret to a file.
+
 ## Analytics (required on every page)
 
 Every HTML page, including any new one, must have this Cloudflare Web Analytics tag as the last line before `</body>`, after the other scripts. Copy it exactly and never remove or change it:
